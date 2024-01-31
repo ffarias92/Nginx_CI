@@ -10,7 +10,9 @@ Para ingresar  a las instancias Crear llave  con siguiente comando :
 Para ejecutar la Infraestructura en AWS ejecutar la siguiente linea de comandos : 
 
 <code> terraform init # para descargar las dependencias </code>
+
 <code> terraform plan # para revisar la configuracion a ejecutar </code>
+
 <code> terraform apply # para aplicar la configuracion de la infraestructura en AWS </code>
 
 
