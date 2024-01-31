@@ -25,7 +25,7 @@ resource "aws_route_table" "public_route_table" {
   }
 }
 
-# Adjunta la tabla de ruteo a las subredes
+# Adjunta la tabla de ruteo a ambas subredes
 resource "aws_route_table_association" "public_subnet_association" {
   subnet_id      = aws_subnet.redes_privadas[0].id
   route_table_id = aws_route_table.public_route_table.id

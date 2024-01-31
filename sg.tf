@@ -50,7 +50,16 @@ resource "aws_security_group" "http_outbound_sg" {
     cidr_blocks =  var.cidr_general
   }
 
+ egress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks =  var.cidr_general
+  }
+
+
   # Reglas de entrada y salida para PostgreSQL
+
   egress {
     from_port   = 5432
     to_port     = 5432

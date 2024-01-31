@@ -23,7 +23,7 @@ resource "aws_lb" "nginx" {
   depends_on         = [aws_lb_target_group.nginx]
 }
 
-# Asocia ambas instancias EC2 con el grupo de destino en bloques separados
+# Asocia ambas instancias EC2 al balanceador de Carga ALB
 resource "aws_lb_target_group_attachment" "nginx_attachment_1" {
   target_group_arn = aws_lb_target_group.nginx.arn
   target_id       = aws_instance.ec2_instance_1[0].id
@@ -34,7 +34,7 @@ resource "aws_lb_target_group_attachment" "nginx_attachment_2" {
   target_id       = aws_instance.ec2_instance_2[0].id
 }
 
-# Agregar una regla de escucha para redirigir el tráfico HTTP al grupo de destino "nginx"
+# Agregar una regla de escucha para redirigir el tráfico HTTP al grupo de destino "nginx" el cual realiza el balanceo de carga
 resource "aws_lb_listener_rule" "nginx_listener_rule" {
   listener_arn = aws_lb_listener.nginx_listener.arn
   priority     = 100

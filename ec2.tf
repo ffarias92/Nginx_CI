@@ -1,5 +1,7 @@
 # Archivo ec2.tf
 
+#Configuracion de la instancia 1
+
 resource "aws_instance" "ec2_instance_1" {
   count   = 1
   instance_type = "t2.micro"
@@ -18,6 +20,8 @@ resource "aws_instance" "ec2_instance_1" {
   availability_zone = "us-east-1a"
 
 }
+
+#Configuracion de la instancia 2
 
 resource "aws_instance" "ec2_instance_2" {
   count   = 1
@@ -38,9 +42,13 @@ resource "aws_instance" "ec2_instance_2" {
   availability_zone = "us-east-1b"
 }
 
+
+# Devuelve la IP de la primera instancia como output
 output "ec2_instance_1_ip" {
   value = aws_instance.ec2_instance_1.*.public_ip
 }
+
+# Devuelve la IP de la segunda instancia como output
 
 output "ec2_instance_2_ip" {
   value = aws_instance.ec2_instance_2.*.public_ip
