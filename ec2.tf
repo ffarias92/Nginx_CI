@@ -37,3 +37,11 @@ resource "aws_instance" "ec2_instance_2" {
 
   availability_zone = "us-east-1b"
 }
+
+output "ec2_instance_1_ip" {
+  value = aws_instance.ec2_instance_1.*.public_ip
+}
+
+output "ec2_instance_2_ip" {
+  value = aws_instance.ec2_instance_2.*.public_ip
+}
