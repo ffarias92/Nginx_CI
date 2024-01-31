@@ -1,0 +1,26 @@
+{
+  "ec2_instance_1_ip": {
+    "sensitive": false,
+    "type": [
+      "tuple",
+      [
+        "string"
+      ]
+    ],
+    "value": [
+      "3.80.30.41"
+    ]
+  },
+  "ec2_instance_2_ip": {
+    "sensitive": false,
+    "type": [
+      "tuple",
+      [
+        "string"
+      ]
+    ],
+    "value": [
+      "3.89.39.24"
+    ]
+  }
+}

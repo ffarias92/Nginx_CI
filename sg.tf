@@ -9,8 +9,7 @@ resource "aws_security_group" "http_outbound_sg" {
     Name = "Nginx"
   }
 
-
-# Reglas de salida para Nginx HTTP
+  # Reglas de salida para Nginx HTTP
   ingress {
     from_port   = 80
     to_port     = 80
@@ -25,9 +24,7 @@ resource "aws_security_group" "http_outbound_sg" {
     cidr_blocks = var.cidr_general
   }
 
-
-# Reglas de Entrada y salida para HTTPS
-
+  # Reglas de Entrada y salida para HTTPS
   ingress {
     from_port   = 443
     to_port     = 443
@@ -35,8 +32,17 @@ resource "aws_security_group" "http_outbound_sg" {
     cidr_blocks = var.cidr_general
   }
 
+  
+  # Reglas de Entrada y salida para HTTPS
+  egress {
+    from_port   = 443
+    to_port     = 443
+    protocol    = "tcp"
+    cidr_blocks = var.cidr_general
+  }
 
-# Regla de entrada para SSH
+
+  # Regla de entrada para SSH
   ingress {
     from_port   = 22
     to_port     = 22
@@ -44,14 +50,12 @@ resource "aws_security_group" "http_outbound_sg" {
     cidr_blocks =  var.cidr_general
   }
 
-
-#Reglas de entrada y salida para PostgreSQL
-
+  # Reglas de entrada y salida para PostgreSQL
   egress {
     from_port   = 5432
     to_port     = 5432
     protocol    = "tcp"
-    cidr_blocks = var.cidr_blocks  #llama la variable cidr_blocks del archivo variables.tf
+    cidr_blocks = var.cidr_blocks  # Llama la variable cidr_blocks del archivo variables.tf
   }
-
 }
+
