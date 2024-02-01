@@ -6,6 +6,17 @@ Para ingresar  a las instancias Crear llave  con siguiente comando :
 
 <code> aws ec2 create-key-pair --key-name "llaves-nginx" --query 'KeyMaterial' --output text > "nombre-archivo".pem </code>
 
+Definir Usuarios y contraseñas para base de datos RDS en un archivo con cualquier nombre de preferencia, (personalmente lo llame credenciales-database.tf)
+
+<code>variable "database_username" {
+  type    = string
+  default = "$definir-usuario"
+}</code>
+
+<code>variable "database_password" {
+  type    = string
+  default = "$definir-contraseña"
+}</code>
 
 Para ejecutar la Infraestructura en AWS ejecutar la siguiente linea de comandos : 
 
@@ -19,23 +30,6 @@ Para ejecutar la Infraestructura en AWS ejecutar la siguiente linea de comandos 
 Para poder instalar Nginx en las instancias ejecutar el archivo nginx.sh 
 
 <code> bash -x nginx.sh </code>
-
-
-Definir Usuarios y contraseñas para base de datos RDS en un archivo con cualquier nombre de preferencia, (personalmente lo llame credenciales-database.tf)
-
-
-variable "database_username" {
-  type    = string
-  default = "$definir-usuario"
-}
-
-
-variable "database_password" {
-  type    = string
-  default = "$definir-contraseña"
-
-
-
 
 luego ejecutar el siguiente comando :
 
