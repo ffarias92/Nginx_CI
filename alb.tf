@@ -63,4 +63,10 @@ resource "aws_lb_listener" "nginx_listener" {
   }
 }
 
+# Output para el DNS del ALB
+output "alb_dns_name" {
+  value = aws_lb.nginx.dns_name
+
+}
+
 

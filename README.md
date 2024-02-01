@@ -19,3 +19,7 @@ Para ejecutar la Infraestructura en AWS ejecutar la siguiente linea de comandos 
 Para poder instalar Nginx en las instancias ejecutar el archivo nginx.sh 
 
 <code> bash -x nginx.sh </code>
+
+Revisar el DNS entregado por el ELB en el navegador
+
+alb_dns_name =  "nombre DNS" 
