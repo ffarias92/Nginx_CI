@@ -1,5 +1,11 @@
 # Archivo rds.tf
 
+
+# variables para las credenciales 
+
+variable "database_username" {}
+variable "database_password" {}
+
 # Define una instancia de base de datos RDS para PostgreSQL
 resource "aws_db_instance" "rds-postgres-1" {
   identifier             = "rds-postgres-1"
@@ -8,8 +14,8 @@ resource "aws_db_instance" "rds-postgres-1" {
   engine                 = "postgres"
   engine_version         = "13.7"
   instance_class         = "db.t3.micro"
-  username               = "myadmin"
-  password               = "mypassword"
+  username               = var.database_username
+  password               = var.database_password
   parameter_group_name   = "default.postgres13"
   publicly_accessible    = false
   skip_final_snapshot    = true

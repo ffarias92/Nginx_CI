@@ -20,6 +20,19 @@ Para poder instalar Nginx en las instancias ejecutar el archivo nginx.sh
 
 <code> bash -x nginx.sh </code>
 
+
+Definir Usuarios y contraseñas en un archivo llamado credentials.tfvars
+ 
+<code>#credentials.tfvars
+database_username = "Definir-Usuario"
+database_password = "Definir-Contraseña" </code>
+
+
+luego ejecutar el siguiente comando :
+
+<code> terraform apply -var-file=credentials.tfvars </code>
+
+
 Revisar el DNS entregado por el ELB en el navegador
 
 alb_dns_name =  "nombre DNS" 

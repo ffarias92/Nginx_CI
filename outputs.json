@@ -1,4 +1,9 @@
 {
+  "alb_dns_name": {
+    "sensitive": false,
+    "type": "string",
+    "value": "balanceador-Nginx-1705394541.us-east-1.elb.amazonaws.com"
+  },
   "ec2_instance_1_ip": {
     "sensitive": false,
     "type": [
@@ -8,7 +13,7 @@
       ]
     ],
     "value": [
-      "54.208.255.141"
+      "54.167.50.107"
     ]
   },
   "ec2_instance_2_ip": {
@@ -20,7 +25,7 @@
       ]
     ],
     "value": [
-      "54.145.150.178"
+      "54.166.192.198"
     ]
   }
 }
