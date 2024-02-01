@@ -32,6 +32,6 @@ Para poder instalar Nginx en las instancias ejecutar el archivo nginx.sh
 <code> bash -x nginx.sh </code>
 
 
-Revisar el DNS entregado por el ELB en el navegador
+Revisar el DNS entregado por ALB en el navegador
 
 alb_dns_name =  "nombre DNS" 
