@@ -23,7 +23,7 @@ Para poder instalar Nginx en las instancias ejecutar el archivo nginx.sh
 
 Definir Usuarios y contraseñas para base de datos RDS en un archivo con cualquier nombre de preferencia, (personalmente lo llame credenciales-database.tf)
 
-'''plaintext
+
 variable "database_username" {
   type    = string
   default = "$definir-usuario"
