@@ -1,11 +1,5 @@
 # Archivo rds.tf
 
-
-# variables para las credenciales 
-
-variable "database_username" {}
-variable "database_password" {}
-
 # Define una instancia de base de datos RDS para PostgreSQL
 resource "aws_db_instance" "rds-postgres-1" {
   identifier             = "rds-postgres-1"
