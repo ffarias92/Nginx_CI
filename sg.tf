@@ -9,7 +9,7 @@ resource "aws_security_group" "http_outbound_sg" {
     Name = "Nginx"
   }
 
-  # Reglas de salida para Nginx HTTP
+  # Reglas de entrada y salida para Nginx HTTP
   ingress {
     from_port   = 80
     to_port     = 80
@@ -31,9 +31,7 @@ resource "aws_security_group" "http_outbound_sg" {
     protocol    = "tcp"
     cidr_blocks = var.cidr_general
   }
-
   
-  # Reglas de Entrada y salida para HTTPS
   egress {
     from_port   = 443
     to_port     = 443
@@ -42,7 +40,7 @@ resource "aws_security_group" "http_outbound_sg" {
   }
 
 
-  # Regla de entrada para SSH
+  # Regla de entrada y salida para SSH
   ingress {
     from_port   = 22
     to_port     = 22
@@ -58,7 +56,7 @@ resource "aws_security_group" "http_outbound_sg" {
   }
 
 
-  # Reglas de entrada y salida para PostgreSQL
+  # Reglas de salida para PostgreSQL
 
   egress {
     from_port   = 5432
