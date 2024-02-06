@@ -1,4 +1,4 @@
-# CoreDevX
+# Nginx_CI
 
 
 Para ingresar  a las instancias Crear llave  con siguiente comando : 

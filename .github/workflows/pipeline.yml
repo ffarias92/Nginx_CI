@@ -1,0 +1,35 @@
+name: Docker Image Nginx
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repo
+      uses: actions/checkout@v3
+ 
+    - name: Ejecutar las variables de la base de datos
+      run: bash database.sh
+
+    - name: Descargar los paquetes de la infraestructura de aws en terraform 
+      run: terraform init
+
+    - name: Probar la infaestructura de aws con Terrraform
+      run: terraform plan
+
+    - name: Desplegar la Infraestructura de aws con terraform
+      run: terraform apply -auto-aprove -input=false
+
+    - name: Instalar Nginx en los servidores.
+      run: bash nginx.sh
+
+
+
+
+
+        #    - name: Recibir la URL del servidor
+        #run: echo ""
