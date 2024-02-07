@@ -1,5 +1,7 @@
 # Archivo alb.tf
 
+#
+
 # Definición del grupo de destino
 resource "aws_lb_target_group" "nginx" {
   name        = "nginx"
