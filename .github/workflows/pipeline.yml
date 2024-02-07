@@ -11,7 +11,7 @@ jobs:
     steps:
     - name: Checkout Repo
       uses: actions/checkout@v3
- 
+
     - name: Ejecutar las variables de la base de datos
       run: bash database.sh
 
@@ -20,14 +20,10 @@ jobs:
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-     with:
+      with:
         aws-region: us-east-1
 
-
-
-
-
-    - name: Descargar los paquetes de la infraestructura de aws en terraform 
+    - name: Descargar los paquetes de la infraestructura de aws en terraform
       run: terraform init
 
     - name: Probar la infaestructura de aws con Terrraform
@@ -40,8 +36,3 @@ jobs:
       run: bash nginx.sh
 
 
-
-
-
-        #    - name: Recibir la URL del servidor
-        #run: echo ""
