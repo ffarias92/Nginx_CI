@@ -15,7 +15,7 @@ jobs:
 
 
     - name: Assume Role A in AWS Account A via OpenID Connect
-      uses: aws-actions/configure-aws-credentials@v1
+      uses: aws-actions/configure-aws-credentials@v4
       with:
         role-session-name: account-a-session
         role-to-assume: ${{ secrets.ROLE_A_IN_ACCOUNT_A }}
