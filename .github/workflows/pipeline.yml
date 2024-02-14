@@ -29,7 +29,7 @@ jobs:
       run: terraform plan
 
     - name: Desplegar la Infraestructura de AWS con Terraform
-      run: terraform apply -auto-aprove -input=false
+      run: terraform apply -auto-approve -input=false
 
     - name: Instalar Nginx en los servidores
       run: bash nginx.sh
