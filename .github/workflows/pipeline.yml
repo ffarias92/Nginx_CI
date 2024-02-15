@@ -25,15 +25,6 @@ jobs:
     - name: Probar la infraestructura de AWS con Terraform
       run: terraform plan
 
-    - name: Solicitar aprobación para el despliegue
-      if: success() && github.event_name == 'push'
-      uses: pullreminders/request-action@v4
-      with:
-        reviewers: ffarias92  
-        title: Despliegue de infraestructura de AWS
-        body: Se requiere tu aprobación para desplegar la infraestructura de AWS. Por favor revisa los cambios y aprueba si todo parece correcto.
-
-
     - name: Desplegar la Infraestructura de AWS con Terraform
       run: terraform apply -auto-approve -input=false
     
