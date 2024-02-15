@@ -29,8 +29,9 @@ jobs:
       run: terraform apply -auto-approve -input=false
     
     - name: Descargar llaves nginx y Otorgar permisos 
-      run : aws s3 cp s3://terraform-ffarias-1/network/llaves-nginx.pem . 
-      run : chmod 600 llaves-nginx.pem 
+      run : |
+        aws s3 cp s3://terraform-ffarias-1/network/llaves-nginx.pem . 
+        chmod 600 llaves-nginx.pem 
 
     - name: Instalar Nginx en los servidores
       run: bash -x nginx.sh
