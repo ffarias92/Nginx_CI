@@ -1,7 +1,7 @@
 
 variable "database_username" {
   type    = string
-  default = "admin"
+  default = "postgresadmin"
 }
 
 variable "database_password" {
