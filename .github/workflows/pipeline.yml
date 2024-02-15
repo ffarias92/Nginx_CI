@@ -31,6 +31,9 @@ jobs:
     - name: Desplegar la Infraestructura de AWS con Terraform
       run: terraform apply -auto-approve -input=false
         
+    - name: agregar permisos a llave SSH
+      run: chmod 600 llaves-nginx.pem 
+
     - name: Instalar Nginx en los servidores
       run: bash -x nginx.sh
 
