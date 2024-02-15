@@ -1,5 +1,4 @@
-name: Docker Image Nginx
-
+name: Nginx AWS - CI Terraform 
 on:
   push:
     branches: [ "master" ]
@@ -12,8 +11,6 @@ jobs:
     steps:
     - name: Checkout Repo
       uses: actions/checkout@v3
-
-
 
     - name: Conectarse a AWS
       uses: aws-actions/configure-aws-credentials@v1
@@ -31,11 +28,9 @@ jobs:
     - name: Desplegar la Infraestructura de AWS con Terraform
       run: terraform apply -auto-approve -input=false
     
-    - name: descargar llaves nginx
+    - name: Descargar llaves nginx y Otorgar permisos 
       run : aws s3 cp s3://terraform-ffarias-1/network/llaves-nginx.pem . 
-
-    - name: agregar permisos a llave SSH
-      run: chmod 600 llaves-nginx.pem 
+      run : chmod 600 llaves-nginx.pem 
 
     - name: Instalar Nginx en los servidores
       run: bash -x nginx.sh
