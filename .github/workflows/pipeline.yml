@@ -30,7 +30,10 @@ jobs:
 
     - name: Desplegar la Infraestructura de AWS con Terraform
       run: terraform apply -auto-approve -input=false
-        
+    
+    - name: descargar llaves nginx
+      run : aws s3 cp s3://terraform-ffarias-1/network/llaves-nginx.pem . 
+
     - name: agregar permisos a llave SSH
       run: chmod 600 llaves-nginx.pem 
 
