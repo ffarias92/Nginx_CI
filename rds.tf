@@ -10,7 +10,7 @@ resource "aws_db_instance" "rds-postgres-1" {
   instance_class         = "db.t3.micro"
   username               = var.database_username
   password               = var.database_password
-  parameter_group_name   = "default.postgres13"
+  parameter_group_name   = "default.postgres15"
   publicly_accessible    = false
   skip_final_snapshot    = true
   vpc_security_group_ids = [aws_security_group.rds_sg.id]
