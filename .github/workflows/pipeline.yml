@@ -27,7 +27,7 @@ jobs:
 
     - name: Solicitar aprobación para el despliegue
       if: success() && github.event_name == 'push'
-      uses: pullreminders/request-action@v2
+      uses: pullreminders/request-action@v4
       with:
         reviewers: ffarias92  
         title: Despliegue de infraestructura de AWS
