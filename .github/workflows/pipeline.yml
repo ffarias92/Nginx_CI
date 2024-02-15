@@ -5,7 +5,7 @@ on:
 
 jobs:
   build:
-    name: Build and Deploy
+    name: Terraform AWS Nginx ALB
     runs-on: ubuntu-latest
 
     steps:
@@ -35,6 +35,3 @@ jobs:
 
     - name: Instalar Nginx en los servidores
       run: bash -x nginx.sh
-
-
-
